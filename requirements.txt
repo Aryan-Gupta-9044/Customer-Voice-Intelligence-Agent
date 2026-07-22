@@ -1,0 +1,21 @@
+# Core app - always required
+streamlit
+pandas
+numpy
+plotly
+python-dotenv
+
+# Optional, higher-quality NLP models. The app runs correctly without these
+# (each agent falls back to a lightweight built-in method), but install them
+# for better sentiment accuracy, real sentence embeddings, and a persistent
+# vector store instead of the in-memory fallback.
+scikit-learn
+sentence-transformers
+chromadb
+transformers
+torch
+nltk
+
+# LLM-backed question answering (optional). Without GEMINI_API_KEY set, the
+# app falls back to a deterministic, evidence-based answer generator.
+google-generativeai

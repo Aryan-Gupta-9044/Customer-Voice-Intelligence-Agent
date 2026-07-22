@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Customer Voice Intelligence Agent</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.css"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.js";
+
+      mount(
+        {
+          // Only pure-Python packages work in the browser (Pyodide/WASM). The app's agents
+          // already fall back to lightweight built-in logic when heavier packages (torch,
+          // sentence-transformers, chromadb, transformers) aren't available, so we don't
+          // request those here - see README.md "Deploying to GitHub Pages" for details.
+          requirements: ["pandas", "numpy", "plotly"],
+          entrypoint: "app.py",
+          files: {
+            "app.py": { url: "./app.py" },
+            "agents/__init__.py": { url: "./agents/__init__.py" },
+            "agents/cleaning_agent.py": { url: "./agents/cleaning_agent.py" },
+            "agents/sentiment_agent.py": { url: "./agents/sentiment_agent.py" },
+            "agents/embedding_agent.py": { url: "./agents/embedding_agent.py" },
+            "agents/theme_agent.py": { url: "./agents/theme_agent.py" },
+            "agents/trend_agent.py": { url: "./agents/trend_agent.py" },
+            "agents/rag_agent.py": { url: "./agents/rag_agent.py" },
+            "agents/qa_agent.py": { url: "./agents/qa_agent.py" },
+            "database/__init__.py": { url: "./database/__init__.py" },
+            "database/chroma_store.py": { url: "./database/chroma_store.py" },
+            "utils/__init__.py": { url: "./utils/__init__.py" },
+            "utils/helpers.py": { url: "./utils/helpers.py" },
+            "data/sample_reviews.csv": { url: "./data/sample_reviews.csv" },
+          },
+          streamlitConfig: {
+            "client.toolbarMode": "viewer",
+            "client.showErrorDetails": true,
+          },
+        },
+        document.getElementById("root"),
+      );
+    </script>
+  </body>
+</html>
