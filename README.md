@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 # Customer Voice Intelligence Agent
 
 ## Overview
@@ -300,7 +298,3 @@ CustomerVoiceAgent/
 ## License
 
 MIT
-<<<<<<< HEAD
-=======
->>>>>>> 5f1cc652a2323a18dd3c7b1a3ecb425a10a0ee71
->>>>>>> origin/main
