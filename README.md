@@ -199,9 +199,6 @@ python utils/prepare_kaggle_dataset.py \
     --output data/kaggle_reviews.csv
 ```
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 ## Troubleshooting
 
 - If the app shows a session warning, run it with `streamlit run app.py` rather than `python app.py`.
