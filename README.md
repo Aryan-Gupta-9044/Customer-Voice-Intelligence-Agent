@@ -103,23 +103,6 @@ Customer Voice Intelligence Agent is a Streamlit-based Python application that i
 - Charts: Plotly
 - LLM: Gemini API (when configured)
 
-## Installation
-
-1. Create a virtual environment.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Set the Gemini API key if you want live LLM responses:
-   ```bash
-   set GEMINI_API_KEY=your_key_here
-   ```
-
-## Run
-
-```bash
-streamlit run app.py
-```
 
 ## Why the Q&A Answers Were Inaccurate (and the fix)
 
